@@ -17,7 +17,8 @@
   "devDependencies": {
     "electron": "^11.1.0",
     "electron-builder": "^22.9.1",
-    "electron-is-dev": "^1.2.0"
+    "electron-is-dev": "^1.2.0",
+    "electron-packager": "^15.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,7 +27,11 @@
     "eject": "react-scripts eject",
     "ebuild": "npm run build && node_modules/.bin/build",
     "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron": "electron ."
+    "electron": "electron .",
+    "win32": "electron-packager . hook-instagram --platform=win32 --arch=ia32",
+    "win64": "electron-packager . hook-instagram --platform=win32 --arch=x64",
+    "linux64": "electron-packager . hook-instagram --platform=linux --arch=x64",
+    "osx": "electron-packager . hook-instagram --platform=darwin --arch=x64"
   },
   "eslintConfig": {
     "extends": [
