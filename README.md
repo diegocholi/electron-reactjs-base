@@ -9,21 +9,21 @@
 
 ### Escrevendo seu primeiro aplicativo Electron React:
 
-Vamos criar um clichê de reação de elétrons que pode ser reutilizado para aplicações de reação.
-Para começar, vamos instalar o construtor de elétrons, elétron e espera:
+Neste tutorial vamos aprender como criar um aplicativo desktop multiplataforma utilizando React JS + Electron.
+Para começar vamos instalar o electron-builder, electron CI:
 
-1. Construtor de elétrons: É necessário ter um construtor de elétrons para suas aplicações de elétrons. Ele empacota e constrói o aplicativo para criar aplicativos "prontos para distribuição" para Windows, macOS e Linux.
+1. **electron-builder**: Ele empacota e constrói o aplicativo para criar aplicativos "prontos para distribuição" para Windows, macOS e Linux.
 
-2. Wait-on: Adicionaremos o wait-on ao host local antes de criar um aplicativo de elétrons. Assim, certificando-se de que o servidor webpack seja executado antes do app electron:
+2. Wait-on: Adicionaremos o wait-on ao host local antes de criar um aplicativo de electron. Assim, certificando-se de que o servidor webpack seja executado antes do app electron:
 
 ```
 npm install electron electron-builder wait-on
 npm install electron-is-dev concurrently
 ```
 
-Crie uma nova pasta como "electron" e crie o arquivo main.js.
+Na raiz do projeto crie uma nova pasta com o nome de "electron" e crie um arquivo chamado main.js dentro dela.
 
-Electron-is-dev: permite que você depure seu código durante o desenvolvimento. Ele pode ser usado no processo principal e renderizado.
+electron-is-dev: permite que você depure seu código durante o desenvolvimento. Ele pode ser usado no processo principal de renderização.
 
     const { app, BrowserWindow } = require('electron');
     const isDev = require('electron-is-dev');
@@ -48,13 +48,13 @@ Electron-is-dev: permite que você depure seu código durante o desenvolvimento.
     }
     app.on('ready', createWindow);
 
-Primeiro, vamos definir as dimensões do BrowserWindow para criar uma janela para nosso aplicativo de elétrons. A seguir, vamos configurar o "startURL". Antes de definir o "startURL", vamos verificar se a aplicação está rodando em modo de desenvolvimento ou modo de produção. Como estamos no modo de desenvolvimento, vamos configurá-lo para localhost.
+Primeiro, vamos definir as dimensões do BrowserWindow para criar uma janela para nosso aplicativo. A seguir, vamos configurar o "startURL", mas antes vamos verificar se a aplicação está rodando em modo de desenvolvimento ou modo de produção. Como estamos no modo de desenvolvimento, vamos configurá-lo para localhost.
 
 Configure o script para executar o aplicativo em um navegador. Adicione o script ebuild para construir o aplicativo, isso constrói o aplicativo no caminho fornecido.
 
     "ebuild": "npm run build && node_modules/.bin/build"
 
-Adicione o dev script, para executar o aplicativo Web e o aplicativo eletrônico ao mesmo tempo. Usaremos o pacote Concurrently de npm que executa vários comandos npm.
+Adicione o dev script, para executar o aplicativo Web e o aplicativo eletrônico ao mesmo tempo. Usaremos o pacote concurrently de npm que executa vários comandos npm.
 
     "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
 
