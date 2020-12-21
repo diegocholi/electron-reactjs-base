@@ -21,7 +21,7 @@ npm install electron electron-builder wait-on
 npm install electron-is-dev concurrently
 ```
 
-Crie uma nova pasta como "Electron" e crie o arquivo main.js.
+Crie uma nova pasta como "electron" e crie o arquivo main.js.
 
 Electron-is-dev: permite que você depure seu código durante o desenvolvimento. Ele pode ser usado no processo principal e renderizado.
 
