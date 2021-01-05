@@ -11,6 +11,10 @@ function createWindow() {
     height: 600,
     show: false,
     autoHideMenuBar: isDev ? false : true,
+    webPreferences: {
+      nodeIntegration: true,
+      webviewTag: true,
+    },
   })
   const startURL = isDev
     ? 'http://localhost:3000'
