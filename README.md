@@ -1,6 +1,5 @@
 # Electron reescrito
-
-    [https://tauri.app/](https://tauri.app/)
+[https://tauri.app/](https://tauri.app/)
 
 # Tutorial de integração React JS + Electron
 
