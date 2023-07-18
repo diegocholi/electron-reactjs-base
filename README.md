@@ -1,5 +1,6 @@
 # Electron reescrito
 [Tauri Page](https://tauri.app/)
+
 [Tauri + NextJS](https://tauri.app/v1/guides/getting-started/setup/next-js)
 
 
