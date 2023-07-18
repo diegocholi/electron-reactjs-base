@@ -1,5 +1,7 @@
 # Electron reescrito
-[https://tauri.app/](https://tauri.app/)
+[Tauri Page](https://tauri.app/)
+[Tauri + NextJS](https://tauri.app/v1/guides/getting-started/setup/next-js)
+
 
 # Tutorial de integração React JS + Electron
 
